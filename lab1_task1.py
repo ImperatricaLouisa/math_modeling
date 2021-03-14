@@ -32,3 +32,6 @@ p=a[1]**b[3]
 print(p)
 p=a+b
 print(p)
+
+
+
