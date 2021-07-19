@@ -14,10 +14,13 @@ def parabola( a, b, c, title='парабола'):
     plt.plot(x,y)
     plt.title(title)
     plt.legend()
+    plt.axis('equal')
     plt.show()
 
 
 parabola( int(input('a ')) , int(input('b ')), int(input('c ')) )
+
+
 
 def giperbola( title='гипербола'):
     
@@ -25,15 +28,14 @@ def giperbola( title='гипербола'):
     xd = float(input('xd '))
     M = float(input('M '))
     k = float(input('k '))
+    
+    x = np.round(np.arange( xc, xd, M ), 6 )
+    
+    y = k / x
  
-    x = np.arange( xc, xd, M )
-    y =  k / x
-
-
     plt.plot(x,y)
     plt.title(title)
-    plt.legend()
+    plt.axis('equal')
     plt.show()
-
 
 giperbola( )
