@@ -4,7 +4,7 @@ import numpy as np
 b0 = np.pi / 2
 a = 1
 A = 1
-B = int(input('B: '))
+B = float(input('B: '))
 b = 3
 t = np.arange(-13, 13, 0.1 )
 
