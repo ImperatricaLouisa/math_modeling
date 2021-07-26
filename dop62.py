@@ -10,7 +10,13 @@ p = ( ry )**2 / rx
 
 r = p / ( 1 + E * np.cos(fi))
 
-plt.plot( r , fi )
+x = r*np.cos(fi)
+y = r*np.sin(fi)
+
+plt.plot( x , y )
 plt.axis('equal')
 plt.show()
     	
+
+
+
