@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-E = np.arange ( 0 , 1 )
-fi = np.linspace(0, 2*np.pi, 100)
+E = 0.5
+fi = np.linspace(0, 6*np.pi, 100)
 
 rx = 2
 ry = 1

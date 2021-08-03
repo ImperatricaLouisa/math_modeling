@@ -20,6 +20,7 @@ def f():
             y[i] = x[i] ** 2
             
     plt.plot(x, y)
+    plt.axis('equal')
     plt.show()
 
 f()
