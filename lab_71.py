@@ -25,4 +25,5 @@ def update(t):
 
 ani = FuncAnimation(fig, update, frames = t , interval=100 ) 
                   
-ani.save('lec_7_create_animation.gif')
+ani.save('l_71(1).gif')
+

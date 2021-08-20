@@ -15,8 +15,8 @@ ax.set_xlim(-3, 3)
 ax.set_ylim(-3, 3)
 
 def update(t): 
-    X= R * (np.cos(t)) ** 3
-    Y= R * (np.sin(t)) ** 3
+    X = R * (np.cos(t)) ** 3
+    Y = R * (np.sin(t)) ** 3
     
     xdata.append(X) 
     ydata.append(Y) 
@@ -25,4 +25,4 @@ def update(t):
 
 ani = FuncAnimation(fig, update, frames = t , interval=100 ) 
                   
-ani.save('lec_7_create_animation.gif')
+ani.save('l_71(2).gif')
