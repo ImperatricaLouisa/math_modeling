@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
  
 fig, ax = plt.subplots()
-ball, = plt.plot([], [], color='r')
+ball, = plt.plot([], [], color='blue')
 
 
 def init():

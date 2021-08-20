@@ -1,25 +1,37 @@
-import matplotlib.animation as animation
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
+
+from matplotlib.animation import FuncAnimation
+
+import matplotlib.animation as animation
+
+
+def cic( R , t ):
+    x = R * ( t - np.sin(t))
+    y = R * ( 1 - np.cos(t))
+    return x, y
+
+def cir_f( R , N , t ):
+    x = np.zeros(N)
+    y = np.zeros(N)
+    for i in range ( 0 , N , 1 ):
+        alpha = np.linspace( 0 , 2*np.pi , N)
+        x[i] = R * t + R * np.cos(alpha[i])
+        y[i] = R + R * np.sin(alpha[i])
+    return x , y
 
 fig, ax = plt.subplots()
-ball, = plt.plot([], [], 'o', color='red', label='Ball')
+fig = plt.figure(figsize=(10,3), facecolor = 'pink' , frameon = True)
 
-
-def circle_move(R, angle_vel, time): 
-    t = angle_vel * (np.pi/180) * time
-    X = R * ( t - np.sin(t))
-    Y = R * ( 1 - np.cos(t))
-    return X,Y
-	
-edge = 40
-plt.axis('equal')
-ax.set_xlim( 0 , edge)
-ax.set_ylim( 0 , edge)
+ball, = plt.plot([], [], color='r', label='Ball')
+ball2, = plt.plot([], [], 'o', color='g', label='Ball2')
+ball3, = plt.plot([], [], color='b', label='Ball3')
 
 def animate(i):
-    ball.set_data(circle_move(R=3, angle_vel=1, time=i))
+    ball.set_data(cic(R=1, t = np.linspace( 0 , 4 * np.pi * i / 100 , 1 * i)))
+    ball2.set_data(cic(R=1, t = 4 * np.pi * i / 100 ))
+    ball3.set_data(cic(R=1, t = 4 * np.pi * i / 100 ))
+    
+ani = animation.FuncAnimation(fig,animate,frames=100,interval=100)
 
-ani = animation.FuncAnimation(fig, animate , frames = 1000 , interval=10 ) 
-                  
-ani.save('aaaaaa_71.gif')
+ani.save('lec_71.gif')
